@@ -5,26 +5,42 @@ Team members: Rishabh Gupta (one team member only)
 SJSU ID: 010013666
 Professor Larkin
 
-1)	Created I created  a VM in GCP in the compute engine section with nested virtualization enabled.
-2)	Then I have Selected “Intel Haswell” as CPU platform with architecture x86/64.
-3)	I ran the VM using SSH
-4)	Therefore, in the VM terminal I have created a cmpe_283_assg_1.c file is a source file ,that consists the Reading Capabilities of MSRs.
-5)	I have then created a Makefile 
-6)	 Then I installed make tool and gcc compiler on VM using the command
-a.	Run sudo apt install gcc make
-7)	The 6 MSR’s in the assignment  that are used  to detect the capabilities on our GCP VM are as follows:
-a) IA32_VMX_PINBASED_CTLS 0x481
-b) IA32_VMX_PROCBASED_CTLS 0x482
-c) IA32_VMX_PROCBASED_CTLS2 0x48B
-d) IA32_VMX_EXIT_CTLS 0x483
-e) IA32_VMX_ENTRY_CTLS 0x484
-f) IA32_VMX_PROCBASED_CTLS3 0X92
-8)	Run under the same directory with MakeFile and cmpe283.c file in terminal using the command
-make
+1)	Utilized Compute Engine Section feature in GCP to creatre a Virtual Machine with nested virtualization
+
+2)	Select CPU Platform: Intell Haswell (architecture x86/64).
+
+3)	Executed SSH to run VM
+
+4)	 Therefore, in the VM terminal I have created a cmpe_283_assg_1.c file is a source file ,that consists the Reading Capabilities of MSRs.
+
+5)	Makefile is created
+
+6)	 Install "make tool", "gcc compiler" on VM via: "sudo apt install gcc make"
+
+7)	The following MSR's will detect capabilities for the VM:
+IA32_VMX_PINBASED_CTLS 0x481
+IA32_VMX_PROCBASED_CTLS 0x482
+IA32_VMX_PROCBASED_CTLS2 0x48B
+IA32_VMX_EXIT_CTLS 0x483
+IA32_VMX_ENTRY_CTLS 0x484
+IA32_VMX_PROCBASED_CTLS3 0X92
+
+8) In the same directory as MakeFile & cmpe_283_assg_1.c, execute: "make"
+
+9)	Execute commands:
+    sudo insmod cmpe_283_assg_1.ko (run the source file)
+    sudo dmesg (detects MSR capabilities)
+
+10) The output will consist of messages for the following MSR's:
+IA32_VMX_PINBASED_CTLS 0x481
+IA32_VMX_PROCBASED_CTLS 0x482
+IA32_VMX_PROCBASED_CTLS2 0x48B
+IA32_VMX_EXIT_CTLS 0x483
+IA32_VMX_ENTRY_CTLS 0x484
+IA32_VMX_PROCBASED_CTLS3 0X92
 
 
-
-
+OUTPUT:
 [ 1292.651148] CMPE 283 Assignment 1 Module Start
 [ 1292.656597] Pinbased Controls MSR: 0x3f00000016
 [ 1292.662631]   External Interrupt Exiting: Can set=Yes, Can clear=Yes
